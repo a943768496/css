@@ -1,0 +1,57 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #222;
+}
+a{
+  position: relative;
+  font-size: 30px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  padding: 12px 40px;
+  background-image: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background-size: 400%;
+}
+
+a:hover{
+  animation: show 8s infinite;
+}
+
+@keyframes show {
+  0%{
+    background-position: 0%;
+  }
+  100%{
+    background-position: 400%;
+  }
+}
+
+a::after{
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 30px;
+  transition: 0.5s;
+  /* opacity: 0; 因为觉得不加效果更惊艳一点*/
+  /* 使该图层垫底 */
+  z-index: -1;
+}
+
+a:hover::after{
+  background-image: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background-size: 400%;
+  /* 模糊 */
+  filter: blur(15px);
+  /* opacity: 1; 理由同上*/
+  animation: show 8s infinite;
+}

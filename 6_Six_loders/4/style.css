@@ -1,0 +1,54 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #2d3436;
+}
+#box{
+  position: relative;
+  width: 48px;
+  height: 48px;
+  /* background: steelblue; */
+  animation: rotation 0.5s linear infinite;
+}
+#box::after,#box::before{
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-color: tomato;
+  border-radius: 50%;
+}
+#box::before{
+  top: 0;
+  animation: scale 0.5s infinite ease-in-out alternate;
+}
+#box::after{
+  bottom: 0;
+  width: 18px;
+  height: 18px;
+  background-color: aquamarine;
+  animation: scale 0.5s infinite ease-in-out alternate;
+}
+@keyframes rotation {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+@keyframes scale {
+  0%{
+    transform: scale(1);
+  }
+  100%{
+    transform: scale(0);
+  }
+}

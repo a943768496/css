@@ -1,0 +1,42 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #2d3436;
+}
+#text{
+  position: relative;
+  color: #fff;
+  width: 340px;
+  padding: 35px;
+  background: #2d3436;
+}
+h2{
+  font-size: 24px;
+  line-height: 2em;
+}
+p{
+  font-size: 16px;
+  line-height: 1.5em;
+  /* 首行缩进 */
+  text-indent: 2em;
+}
+#text::after,#text::before{
+  position: absolute;
+  content: "";
+  top: -2px;
+  right: -2px;
+  left: -2px;
+  bottom: -2px;
+  background-image: linear-gradient(to top right, #B92B27, #2d3436, #1565C0);
+  z-index: -1;
+}
+#text::after{
+  filter: blur(20px);
+}

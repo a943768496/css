@@ -1,0 +1,59 @@
+/* 参考自https://www.bilibili.com/video/BV1ce411s7GL?t=389 */
+
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  background: #222;
+  /* 弹性布局 */
+  display: flex;
+  /* 组件左右居中 */
+  justify-content: center;
+  /* 组件上下居中 */
+  align-items: center;
+  /* 最小高度 */
+  min-height: 100vh;
+}
+h1{
+  color: #333;
+  font-size: 8rem;
+  position: relative;
+}
+/* h1下面的图层设置 */
+h1:after{
+  content:"SPOTLIGHT";
+  /* 文字透明 */
+  color: transparent;
+  position: absolute;
+  left: 0;
+  top: 0;
+  /* 渐变色 */
+  background:-webkit-linear-gradient(left,#c23616,#192a56,#00d2d3,yellow,#6D214F,#2e86de,#4cd137,#e84118);
+  /* 裁剪多余部分,相当于剪贴蒙版(?) */
+  background-clip: text;
+  /* 考虑版本兼容性问题（好像只考虑了chrome） */
+  -webkit-background-clip: text;
+  /* 绘制一个圆 （半径 at x坐标 y坐标） */
+  clip-path:circle(100px at 0% 50%);
+  /* 兼容性（同上） */
+  -weblit-clip-path:circle(100px at 0% 50%);
+  /* 将动画关联 （动画名字 一次的时间 循环次数）*/
+  animation: light 5s infinite;
+}
+
+/* 动画帧（？）分别变换不同的x轴坐标 */
+@keyframes light{
+  0%{
+    clip-path:circle(100px at 0% 50%);
+    -weblit-clip-path:circle(100px at 0% 50%);
+  }
+  50%{
+    clip-path:circle(100px at 100% 50%);
+    -weblit-clip-path:circle(100px at 100% 50%);
+  }
+  100%{
+    clip-path:circle(100px at 0% 50%);
+    -weblit-clip-path:circle(100px at 0% 50%);
+  }
+}

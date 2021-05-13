@@ -1,0 +1,30 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #2d3436;
+}
+#box{
+  width: 20px;
+  height: 20px;
+  background: cadetblue;
+  /* 使之成为圆形 */
+  border-radius: 50%;
+  box-shadow: -35px 0 #fff,35px 0 #fff;
+  animation: rotation 2s ease-in-out infinite;
+}
+
+@keyframes rotation {
+  0%{
+      transform: rotate(0deg);
+  }
+  100%{
+      transform: rotate(360deg);
+  }
+}

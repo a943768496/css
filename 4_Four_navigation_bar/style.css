@@ -1,0 +1,68 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+}
+ul{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 450px;
+}
+li{
+  list-style: none;
+}
+a{
+  position: relative;
+  text-decoration: none;
+  color: #222;
+  padding: 6px 18px;
+  transition: 0.5s;
+}
+a:hover{
+  background: #e74c3c;
+  color: #fff;
+}
+a::before{
+  position: absolute;
+  content: "";
+  border: 2px solid #e74c3c;
+  /* 去掉多余边框 上右下左*/
+  border-width: 2px 2px 0 0;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  transition: 0.5s;
+}
+a::after{
+  position: absolute;
+  content: "";
+  border: 2px solid #e74c3c;
+  /* 去掉多余边框 上右下左*/
+  border-width: 0 0 2px 2px;
+  width: 20px;
+  height: 20px;
+  left: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: 0.5s;
+}
+a:hover::before{
+  top: -12px;
+  right: -12px;
+  opacity: 1;
+}
+a:hover::after{
+  bottom: -12px;
+  left: -12px;
+  opacity: 1;
+}
