@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <title>Title</title>
+    <link rel='stylesheet' href='style.css'>
+  </head>
+  <body>
+    <a class="bt">Button</a>
+    <script>
+      // 找到按钮元素
+      const a = document.querySelector('a.bt');
+
+      // 给按钮元素添加事件
+      a.addEventListener('click', (e) => {
+        let offsetLeft = e.target.offsetLeft;
+        let offsetTop = e.target.offsetTop;
+
+        if(e.target.nodeName == 'SPAN') {
+          offsetLeft = e.target.offsetParent.offsetLeft;
+          offsetTop = e.target.offsetParent.offsetTop;
+        }
+
+        let x = e.clientX - offsetLeft;
+        let y = e.clientY - offsetTop;
+
+        let ripper = document.createElement('span');
+        ripper.style.left = x + 'px';
+        ripper.style.top = y + 'px';
+        a.appendChild(ripper);
+
+        setTimeout(() => {
+          ripper.remove();
+        }, 1000)
+      })
+    </script>
+  </body>
+</html>
