@@ -50,6 +50,8 @@ nav {
 }
 .item a p.en {
   background-color: var(--color2);
+  /* en元素沿顶端x轴逆向旋转90度
+    形成于cn元素垂直的夹角，类似于形成一个缺两面的正方体 */
   transform: rotateX(-90deg);
   transform-origin: top;
 }
