@@ -1,0 +1,179 @@
+@import "variable";
+
+* {
+  margin: 0;
+  border: 0;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(197, 197, 197);
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  #display();
+  // 转3D
+  #to3D();
+}
+.card {
+  width: 400px;
+  height: 550px;
+  background-color: black;
+  border-radius: 20px;
+  color: white;
+  position: relative;
+  
+  // 转3D
+  #to3D();
+  transition: 0.5s;
+}
+.pic {
+  #absoluted();
+  border-radius: 20px;
+  background-image: url(bg.jpg);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.pic::after {
+  content: '';
+  #absoluted();
+  background-color: rgba(0, 0, 0, 0.35);
+  transition: 0.5s;
+}
+h2, h3 {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+h2 {
+  font-size: 35px;
+  top: 16%;
+  transition: 1s;
+}
+h3:nth-of-type(1) {
+  font-size: 22px;
+  top: 28%;
+  transition: 1s;
+}
+h3:nth-of-type(2) {
+  font-size: 28px;
+  bottom: 20%;
+  opacity: 0.7;
+  transition: 0.5s;
+}
+.chart {
+  width: 250px;
+  height: 30px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s;
+  #to3D();
+  // background-color: red;
+  display: flex;
+  justify-content: space-between;
+}
+.bar {
+  width: 20px;
+  height: 0;
+  background-color: white;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.15));
+  position: relative;
+  #to3D();
+  transform-origin: top;
+  transform: translateZ(1px) rotateX(90deg) rotateY(-135deg);
+  transition: 1s;
+}
+.bar span {
+  position: absolute;
+  bottom: 0;
+  transform-origin: left;
+  transform: rotateZ(90deg) translate(-100%, -50%);
+  
+
+}
+.bar::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.05));
+  position: absolute;
+  top: 100%;
+  transform-origin: top;
+  transform: rotateX(-90deg);
+  transition: 1s;
+}
+.bar::after {
+  content: '';
+  width: 20px;
+  height: 100%;
+  background-color: white;
+  background-image: linear-gradient(to left top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.15));
+  position: absolute;
+  left: -100%;
+  transform-origin: right;
+  transform: rotateY(-90deg);
+  transition: 1s;
+}
+
+// 点击之后的效果：
+@{active} .card {
+  transform: rotateX(60deg) translateY(150px);
+}
+@{active} .pic {
+  transform: translateZ(20px);
+  box-shadow: 0 50px 50px 0 rgba(0, 0, 0, 0.5);
+}
+@{active} h2 {
+  transform: translate(-50%) translateZ(100px) translateY(-80px);
+  opacity: 0;
+}
+@{active} h3:nth-of-type(1) {
+  transform: translate(-50%) translateZ(80px) translateY(-60px);
+  opacity: 0;
+}
+@{active} h3:nth-of-type(2) {
+  opacity: 1;
+  transform: translate(-50%) translateZ(25px) translateY(25px);
+}
+@{active} .pic::after {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@{active} .chart {
+  transform: translate(-50%, -50%) translateZ(20px);
+}
+
+
+.container.active .bar:nth-child(1) {
+  height: 200px;
+}
+
+.container.active .bar:nth-child(2) {
+  height: 100px;
+}
+
+.container.active .bar:nth-child(3) {
+  height: 150px;
+}
+
+.container.active .bar:nth-child(4) {
+  height: 240px;
+}
+
+.container.active .bar:nth-child(5) {
+  height: 70px;
+}
+
+.container.active .bar:nth-child(6) {
+  height: 70px;
+}
+
+.container.active .bar:nth-child(7) {
+  height: 100px;
+}
