@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f9cdad;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: 160px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.dialog {
+  width: 180px;
+  height: 180px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ECE5CE;
+  margin-bottom: 5px;
+  line-height: 24px;
+  animation: move1 3.5s ease-in infinite;
+}
+.first {
+  width: 80px;
+  height: 15px;
+  border-radius: 15px;
+  background-color: #ECE5CE;
+  margin-bottom: 5px;
+  animation: move2 3.5s ease-in infinite;
+}
+.second {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #ECE5CE;
+  animation: move3 3.5s ease-in infinite;
+}
+.dialog,
+.first,
+.second {
+  box-shadow: 30px 30px 0 0 #83af9b;
+}
+@keyframes move1 {
+  50% {
+    transform: translate(0, 15px);
+  }
+}
+@keyframes move2 {
+  50% {
+    transform: translate(0, 25px);
+  }
+}
+@keyframes move3 {
+  50% {
+    transform: translate(0, 35px);
+  }
+}
