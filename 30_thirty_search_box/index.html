@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset = 'utf-8' />
+    <title>Title</title>
+    <link rel='shortcut icon' href='#'/>
+    <!-- <link rel="stylesheet/less" type="text/css" href="style.less"></link> -->
+    <link rel="stylesheet" href="style1.css">
+  </head>
+  <body>
+    <div class="search-box">
+      <div class="key">
+        <input type="text" placeholder="请输入搜索内容...">
+      </div>
+
+      <div class="bt">
+        <a href="#">
+          <i class="iconfont icon-sousuo"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- <script>
+      less = {
+        env: 'development'
+      }
+    </script>
+    <script src="../lib/less.js"></script> -->
+    <script>
+      let box = document.getElementsByClassName('search-box')
+      box[0].addEventListener('mouseover', () => {
+        box[0].classList.add('active')
+        // less.modifyVars({
+        //   '@isActive': true
+        // })
+      })
+      box[0].addEventListener('click', (e) => {
+        e.stopPropagation()
+      })
+      document.body.addEventListener('click', () => {
+        // less.modifyVars({
+        //   '@isActive': false
+        // })
+        box[0].classList.remove('active')
+      })
+      let text = document.getElementsByTagName('input')
+      let bt = document.getElementsByClassName('bt')
+      bt[0].addEventListener('click', () => {
+        let h = 'http://' + text[0].value
+        
+        if (h !== 'http://') {
+          console.log(h)
+          window.location.href = h
+        }
+      })
+
+    </script>
+  </body>
+</html>
