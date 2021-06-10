@@ -1,0 +1,66 @@
+:root {
+  --color2: #56d5fc;
+  --color4: #def700;
+  --color6: #fa3195;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  position: relative;
+  width: 450px;
+  height: 85px;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, var(--color2), var(--color4), var(--color6));
+  animation: change 3s linear infinite;
+}
+.container::after, .container::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, var(--color2), var(--color4), var(--color6));
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: blur(20px);
+  z-index: -1;
+}
+.container::after {
+  filter: blur(100px);
+}
+.clock {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border-radius: 10px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.clock p {
+ font-size: 60px;
+ font-weight: bold;
+ letter-spacing: 2px;
+ color: transparent;
+ background-image: linear-gradient(to right, var(--color2), var(--color4), var(--color6));
+ background-clip: text;
+ -webkit-background-clip: text;
+}
+@keyframes change {
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}

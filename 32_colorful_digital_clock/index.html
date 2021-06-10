@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset = 'utf-8' />
+    <title>Title</title>
+    <link rel=`shortcut icon` href=`#`/>
+    <link rel = 'stylesheet' href = 'style.css'>
+  </head>
+  <body>
+    <div class="container">
+      <div class="clock">
+        <p class="time">12:50:45 AM</p>
+      </div>
+    </div>
+
+    <script>
+      
+      let day_night = 'AM'
+
+      let addZero = (t) => {
+        if (t < 10) {
+          return '0' + t
+        }
+        return t
+      }
+
+      let change = () => {
+        let time = document.getElementsByClassName('time')[0]
+
+        let date = new Date()
+        let h = date.getHours()
+        let m = date.getMinutes()
+        let s = date.getSeconds()
+
+        if (h > 12) {
+          day_night = 'PM'
+        } else {
+          day_night = 'AM'
+        }
+        time.textContent = addZero(h) + ':' + addZero(m) + ':' + addZero(s) + ' ' + day_night
+      }
+
+      setInterval(() => {
+        change()
+      }, 1000)
+
+      
+
+
+    </script>
+  </body>
+</html>
