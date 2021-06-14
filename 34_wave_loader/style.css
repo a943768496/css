@@ -1,0 +1,66 @@
+:root {
+  --background-color: #000;
+  --border-color: #7591AD;
+  --text-color: #34495e;
+  --color1: #EC3E27;
+  --color2: #fd79a8;
+  --color3: #0984e3;
+  --color4: #00b894;
+  --color5: #fdcb6e;
+  --color6: #e056fd;
+  --color7: #F97F51;
+  --color8: #BDC581;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 800px;
+  transform-style: preserve-3d;
+}
+.loader {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  /* background-color: brown; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotateX(60deg);
+  perspective: 800px;
+  transform-style: preserve-3d;
+}
+.loader span{
+  position: absolute;
+  width: calc(20px * var(--i));
+  height: calc(20px * var(--i));
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 2px 0 #eee, inset 0 3px #eee;
+  /* background-color: burlywood; */
+  animation: spring 3s ease-in-out infinite both;
+  animation-delay: calc(0.1s * var(--i));
+
+}
+@keyframes spring {
+  0%{
+    transform: translateZ(-100px);
+    opacity: 0.2;
+  }
+  50%{
+    transform: translateZ(100px);
+    opacity: 0.8;
+  }
+  100%{
+    transform: translateZ(-100px);
+    opacity: 0.2;
+  }
+}
