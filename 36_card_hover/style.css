@@ -1,0 +1,73 @@
+:root {
+  --background-color: #2c3e50;
+  --border-color: #7591AD;
+  --text-color: #34495e;
+  --color1: #EC3E27;
+  --color2: #fd79a8;
+  --color3: #0984e3;
+  --color4: #00b894;
+  --color5: #fdcb6e;
+  --color6: #e056fd;
+  --color7: #F97F51;
+  --color8: #BDC581;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to bottom, white 50%, #6dd6ff 50%);
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 500px;
+  transform-style: preserve-3d;
+}
+.container .card {
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 120px;
+  height: 150px;
+  border-radius: 5px;
+  margin: 10px;
+  background-color: white;
+  box-shadow: 0 0 30px var(--border-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.container .card h2 {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid var(--color3);
+  line-height: 60px;
+  text-align: center;
+  transition: 0.5s;
+}
+.card:hover h2 {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color3);
+  border-radius: 0;
+  line-height: 150px;
+  color: white;
+}
+.container:hover .card {
+  transform: rotateY(30deg);
+}
+.container .card:hover {
+  transform: rotateY(0deg);
+}
+.container .card:hover~.card {
+  transform: rotateY(-30deg);
+}
