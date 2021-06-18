@@ -74,3 +74,9 @@ h2 {
     transform: rotateY(-360deg);
   }
 }
+.container:hover {
+  animation-play-state: paused;
+}
+.container:hover h2 {
+  animation-play-state: paused;
+}
