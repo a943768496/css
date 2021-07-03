@@ -51,6 +51,6 @@ body {
   background-position: 25% 40%;
   color: transparent;
   background-clip: text;
-  /* -webkit-background-clip: text; */
+  -webkit-background-clip: text;
   text-shadow: 0 0 5vw var(--color1);
 }
