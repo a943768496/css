@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset = 'utf-8' />
+    <title>Title</title>
+    <link rel = "shortcut icon" href="#">
+    <link rel = 'stylesheet' href = 'style.css'>
+  </head>
+  <body>
+    <div class="container">
+      <div class="loader loading"></div>
+    </div>
+
+    <script>
+      let loader = document.querySelector('.loader')
+      loader.addEventListener('click', () => {
+        if(loader.classList.contains('loading')){
+          loader.classList.remove('loading')
+        }else{
+          loader.classList.add('loading')
+        }
+        
+        if(loader.classList.contains('check')){
+          loader.classList.remove('check')
+        }else{
+          loader.classList.add('check')
+        }
+        
+        
+      })
+    </script>
+  </body>
+</html>
