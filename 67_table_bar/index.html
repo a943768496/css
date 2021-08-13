@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset = 'utf-8' />
+    <title>Title</title>
+    <link rel="shortcut icon" href="#">
+    <link rel='stylesheet' href='style.css'>
+  </head>
+  <body>
+    <div class="container">
+      <section class="tab_bar">
+        <div class="tab"><i class="iconfont icon-home"></i></div>
+        <div class="tab"><i class="iconfont icon-category"></i></div>
+        <div class="tab mid">
+          <div class="add" style="--angle: -45deg"><i class="iconfont icon-photo"></i></div>
+          <div class="add" style="--angle: 0deg"><i class="iconfont icon-doc"></i></div>
+          <div class="add" style="--angle: 45deg"><i class="iconfont icon-video"></i></div>
+        </div>
+        <div class="tab"><i class="iconfont icon-cart"></i></div>
+        <div class="tab"><i class="iconfont icon-my"></i></div>
+      </section>
+    </div>
+
+    <script>
+      let mid = document.querySelector('.mid')
+      mid.addEventListener('click', e => {
+        mid.classList.toggle('open')
+      })
+    </script>
+  </body>
+</html>
